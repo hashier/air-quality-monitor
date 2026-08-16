@@ -3491,7 +3491,7 @@
 			(uuid "fda5a4a7-8b8b-491c-94a1-d8b51fa5e473")
 		)
 		(instances
-			(project "test"
+			(project "air-quality-monitor"
 				(path "/85087b8b-0952-43b2-9f12-044aaff7be59"
 					(reference "R2")
 					(unit 1)
@@ -3758,7 +3758,7 @@
 			(uuid "712e555c-822c-4db8-8385-adcdc0aa3e30")
 		)
 		(instances
-			(project "test"
+			(project "air-quality-monitor"
 				(path "/85087b8b-0952-43b2-9f12-044aaff7be59"
 					(reference "C3")
 					(unit 1)

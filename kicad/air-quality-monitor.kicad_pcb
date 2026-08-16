@@ -165,7 +165,7 @@
 		(property ki_fp_filters "C_*")
 		(path "/1b80bbae-1490-45ad-bbd5-61bbd495272a")
 		(sheetname "/")
-		(sheetfile "test.kicad_sch")
+		(sheetfile "air-quality-monitor.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.146267 -0.51)
@@ -306,7 +306,7 @@
 		(property ki_fp_filters "Sensirion*SCD4?*")
 		(path "/58fc3d9a-7ecf-474b-aa06-b4706478321b")
 		(sheetname "/")
-		(sheetfile "test.kicad_sch")
+		(sheetfile "air-quality-monitor.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -5.16 -5.16)
@@ -888,7 +888,7 @@
 		(property ki_fp_filters "Connector*:*_2x??_*")
 		(path "/908b2e14-871e-4656-825f-d89756fcf1a1")
 		(sheetname "/")
-		(sheetfile "test.kicad_sch")
+		(sheetfile "air-quality-monitor.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -1.38 -1.38)
@@ -1154,7 +1154,7 @@
 		(property ki_fp_filters "R_*")
 		(path "/2f429187-3df3-4f0d-8433-2a9d4a447859")
 		(sheetname "/")
-		(sheetfile "test.kicad_sch")
+		(sheetfile "air-quality-monitor.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.254724 -0.5225)
@@ -1295,7 +1295,7 @@
 		(property ki_fp_filters "R_*")
 		(path "/98dd270c-639a-4c0f-88c1-1f2112ffd6fc")
 		(sheetname "/")
-		(sheetfile "test.kicad_sch")
+		(sheetfile "air-quality-monitor.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.254724 -0.5225)
@@ -1436,7 +1436,7 @@
 		(property ki_fp_filters "C_*")
 		(path "/202c936b-fd64-4317-95bb-5832b2fb842a")
 		(sheetname "/")
-		(sheetfile "test.kicad_sch")
+		(sheetfile "air-quality-monitor.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.146267 -0.51)
@@ -1581,7 +1581,7 @@
 		(property ki_fp_filters "ESP32?C6?MINI?1*")
 		(path "/3d372d5d-16f2-4d2e-995e-4e4b78e70a61")
 		(sheetname "/")
-		(sheetfile "test.kicad_sch")
+		(sheetfile "air-quality-monitor.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -6.75 -11.15)
@@ -2480,7 +2480,7 @@
 		(property ki_fp_filters "C_*")
 		(path "/b6d54a5e-679a-4de0-8720-5c05e6abf858")
 		(sheetname "/")
-		(sheetfile "test.kicad_sch")
+		(sheetfile "air-quality-monitor.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.146267 -0.51)
