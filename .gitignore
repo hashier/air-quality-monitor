@@ -6,6 +6,17 @@ esphome/.esphome/
 secrets.yaml
 esphome/secrets.yaml
 
+# KiCad regenerable artifacts
+kicad/fp-info-cache
+kicad/*-backups/
+# Per-user editor state (window layout, open sheets), not design data
+kicad/*.kicad_prl
+# Autosave and lock files from an open KiCad session
+kicad/_autosave-*
+kicad/*.lck
+kicad/*.kicad_pcb-bak
+kicad/*.kicad_sch-bak
+
 # macOS
 .DS_Store
 
