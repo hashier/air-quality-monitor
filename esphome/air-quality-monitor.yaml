@@ -35,18 +35,10 @@ captive_portal:
 web_server:
     port: 80
 
-# Local patched copy of the scd4x component (in ./components/scd4x). Adds
-# auto-recovery: on repeated "data not ready" it re-inits via stop -> start.
-external_components:
-  - source:
-      type: local
-      path: components
-    components: [scd4x]
-
-# --- SCD40 stall monitoring (diagnostic) ---
-# Watches whether CO2 keeps updating and counts stalls, so we can tell in
-# Home Assistant whether the hardware fix held. The recovery itself lives in
-# the patched scd4x component above.
+# --- SCD40 stall monitoring + auto-recovery ---
+# Watches whether CO2 keeps updating; if it goes stale (sensor knocked out of
+# periodic measurement), counts it and re-inits the sensor via raw I2C (stop -> start).
+# Fully in YAML now — stock scd4x component, no fork.
 globals:
   - id: co2_last_update
     type: uint32_t
@@ -60,26 +52,47 @@ globals:
     type: bool
     restore_value: no
     initial_value: 'false'
+  - id: co2_last_recovery
+    type: uint32_t
+    restore_value: no
+    initial_value: '0'
 
 interval:
   - interval: 5s
     then:
+      # Detect a stall: CO2 hasn't updated within 2.5x its poll interval (threshold
+      # read at runtime so it tracks update_interval with no manual coupling).
       - lambda: |-
           if (id(co2_last_update) == 0) return;  // no reading yet, nothing to watch
           uint32_t elapsed = millis() - id(co2_last_update);
-          // Threshold = 2.5x the SCD40 poll interval, read at runtime so it
-          // tracks update_interval automatically (no manual coupling to keep in sync).
           uint32_t threshold = id(scd40_sensor).get_update_interval() * 5 / 2;
           if (elapsed > threshold && !id(co2_in_stall)) {
             id(co2_in_stall) = true;
             id(co2_stall_count) += 1;
             ESP_LOGW("stall_watch", "CO2 stall #%d (no update for %us)", id(co2_stall_count), (unsigned) (elapsed / 1000));
           }
+      # Recover: while stalled, re-init the SCD40 via raw I2C (stop -> 500ms -> start),
+      # rate-limited to once per 30s. A successful re-init resumes readings, which
+      # clears co2_in_stall via the CO2 on_value.
+      - if:
+          condition:
+            lambda: 'return id(co2_in_stall) && (millis() - id(co2_last_recovery) > 30000);'
+          then:
+            - lambda: |-
+                const uint8_t stop_cmd[2] = {0x3F, 0x86};  // SCD4x stop_periodic_measurement
+                id(bus_a).write(0x62, stop_cmd, 2);
+                id(co2_last_recovery) = millis();
+                ESP_LOGW("stall_watch", "recovery: stop -> start periodic measurement");
+            - delay: 500ms
+            - lambda: |-
+                const uint8_t start_cmd[2] = {0x21, 0xB1};  // SCD4x start_periodic_measurement
+                id(bus_a).write(0x62, start_cmd, 2);
 
 
 # I2C bus - all three devices share this.
 # 100kHz is the ceiling: the SPS30 datasheet caps there, so no 400kHz.
 i2c:
+  id: bus_a
   sda: GPIO21
   scl: GPIO22
   frequency: 100kHz
