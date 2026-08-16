@@ -1,0 +1,14 @@
+# ESPHome build artifacts
+.esphome/
+esphome/.esphome/
+
+# Real secrets — never commit (use secrets.yaml.example as the template)
+secrets.yaml
+esphome/secrets.yaml
+
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc

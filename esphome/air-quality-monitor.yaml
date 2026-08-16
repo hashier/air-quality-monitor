@@ -1,0 +1,268 @@
+esphome:
+  name: air-quality-monitor
+  friendly_name: Air Quality Monitor
+
+esp32:
+  board: esp32-c6-devkitc-1
+  framework:
+    type: esp-idf
+
+logger:
+
+api:
+  encryption:
+    key: !secret aqm_api_key
+
+ota:
+  - platform: esphome
+    password: !secret aqm_ota_password
+
+wifi:
+  # Tried in order, falls back to the next on connection failure
+  networks:
+    - ssid: !secret wifi_ssid
+      password: !secret wifi_password
+    - ssid: !secret wifi_hackeriet_ssid
+      password: !secret wifi_hackeriet_password
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "ESPHome"
+    password: !secret ap_password
+
+captive_portal:
+
+web_server:
+    port: 80
+
+# Local patched copy of the scd4x component (in ./components/scd4x). Adds
+# auto-recovery: on repeated "data not ready" it re-inits via stop -> start.
+external_components:
+  - source:
+      type: local
+      path: components
+    components: [scd4x]
+
+# --- SCD40 stall monitoring (diagnostic) ---
+# Watches whether CO2 keeps updating and counts stalls, so we can tell in
+# Home Assistant whether the hardware fix held. The recovery itself lives in
+# the patched scd4x component above.
+globals:
+  - id: co2_last_update
+    type: uint32_t
+    restore_value: no
+    initial_value: '0'
+  - id: co2_stall_count
+    type: int
+    restore_value: no
+    initial_value: '0'
+  - id: co2_in_stall
+    type: bool
+    restore_value: no
+    initial_value: 'false'
+
+interval:
+  - interval: 5s
+    then:
+      - lambda: |-
+          if (id(co2_last_update) == 0) return;  // no reading yet, nothing to watch
+          uint32_t elapsed = millis() - id(co2_last_update);
+          // Threshold = 2.5x the SCD40 poll interval, read at runtime so it
+          // tracks update_interval automatically (no manual coupling to keep in sync).
+          uint32_t threshold = id(scd40_sensor).get_update_interval() * 5 / 2;
+          if (elapsed > threshold && !id(co2_in_stall)) {
+            id(co2_in_stall) = true;
+            id(co2_stall_count) += 1;
+            ESP_LOGW("stall_watch", "CO2 stall #%d (no update for %us)", id(co2_stall_count), (unsigned) (elapsed / 1000));
+          }
+
+
+# I2C bus - all three devices share this.
+# 100kHz is the ceiling: the SPS30 datasheet caps there, so no 400kHz.
+i2c:
+  sda: GPIO21
+  scl: GPIO22
+  frequency: 100kHz
+  scan: true
+
+# --- SCD40 CO2 Sensor ---
+sensor:
+  - platform: scd4x
+    id: scd40_sensor
+    # ASC derives its baseline from the lowest reading over a rolling multi-day
+    # window, assuming that minimum was fresh air. Valid here because the room
+    # is aired daily. Deliberately the only calibration mechanism: a manual
+    # forced recalibration would just get undone by ASC over the following week.
+    automatic_self_calibration: true
+    # Provisional self-heating correction: on the current breadboard setup the
+    # SCD40 read ~2.5°C high vs a reference, and the default 4°C offset wasn't
+    # enough. Re-tune in the final enclosure (side-by-side): new = old + (measured - reference).
+    temperature_offset: 6.5°C
+    co2:
+      name: "CO2"
+      id: co2
+      filters:
+        # Short 30s warm-up drop; CO2 settles fast and its spike is small.
+        - lambda: 'return millis() < 30000 ? optional<float>{} : optional<float>(x);'
+      on_value:
+        # Fresh reading arrived: stamp the time and clear any active stall.
+        then:
+          - lambda: |-
+              id(co2_last_update) = millis();
+              id(co2_in_stall) = false;
+    temperature:
+      name: "Temperature"
+      id: temp
+      filters:
+        # SCD4x reads ~4°C high for the first few minutes after each start
+        # (on-chip temp compensation converging), then settles. Drop until 5 min
+        # uptime so restarts don't leave big warm-up spikes in history.
+        - lambda: 'return millis() < 300000 ? optional<float>{} : optional<float>(x);'
+    humidity:
+      name: "Humidity"
+      id: hum
+      filters:
+        # Same warm-up transient (~10% RH); RH is derived from temperature.
+        - lambda: 'return millis() < 300000 ? optional<float>{} : optional<float>(x);'
+    update_interval: 10s   # lowered from 30s for faster debug iteration / recovery
+
+  # --- SPS30 Particulate Matter Sensor ---
+  - platform: sps30
+    id: sps30_sensor
+    update_interval: 10s
+    pm_1_0:
+      name: "PM 1.0"
+      id: pm1
+    pm_2_5:
+      name: "PM 2.5"
+      id: pm25
+    pm_4_0:
+      name: "PM 4.0"
+      id: pm4
+    pm_10_0:
+      name: "PM 10.0"
+      id: pm10
+
+  # --- Air Quality Index Sensor derived from PM2.5 and PM10 ---
+  - platform: aqi
+    name: "Air Quality Index (European)"
+    pm_2_5: pm25
+    pm_10_0: pm10
+    calculation_type: CAQI
+  - platform: aqi
+    name: "Air Quality Index (US)"
+    pm_2_5: pm25
+    pm_10_0: pm10
+    calculation_type: AQI
+
+  # Diagnostic: how many times the SCD40 has stalled since boot. 0 over a day
+  # means the hardware fix held; a climbing count means it's still flaky.
+  - platform: template
+    name: "CO2 Stall Count"
+    id: co2_stall_count_sensor
+    accuracy_decimals: 0
+    entity_category: diagnostic
+    lambda: 'return id(co2_stall_count);'
+    update_interval: 30s
+
+binary_sensor:
+  - platform: template
+    name: "CO2 Currently Stalled"
+    entity_category: diagnostic
+    lambda: 'return id(co2_in_stall);'
+
+button:
+  - platform: template
+    name: "SPS30 Fan Clean"
+    entity_category: config
+    on_press:
+      then:
+        - sps30.start_fan_autoclean: sps30_sensor
+
+  # Clears the SCD4x's persistent EEPROM settings (stored calibration, ASC
+  # history) and reinitialises it. Nothing else we can do from software reaches
+  # that state, since a chip reset leaves the sensor powered.
+  #
+  # The reboot is required, not cosmetic: ESPHome's factory_reset() stops
+  # periodic measurement and never restarts it, so without a reboot the sensor
+  # sits idle forever. Rebooting re-runs setup(), which reissues
+  # start_periodic_measurement and rewrites the temperature offset, altitude
+  # and ASC flag that the reset just wiped. The delay covers the command's
+  # 1200ms execution time, which ESPHome does not wait for.
+  - platform: template
+    name: "SCD40 Factory Reset"
+    entity_category: config
+    on_press:
+      then:
+        - scd4x.factory_reset: scd40_sensor
+        - delay: 3s
+        - lambda: 'App.safe_reboot();'
+
+  # Resets the stall counter without a reboot, so you can start a fresh
+  # "did the hardware fix hold?" measurement after reflowing/reseating.
+  - platform: template
+    name: "Reset Stall Count"
+    entity_category: config
+    on_press:
+      then:
+        - lambda: |-
+            id(co2_stall_count) = 0;
+            id(co2_in_stall) = false;
+
+# --- SSD1306 OLED Display ---
+font:
+  - file: "gfonts://Roboto"
+    id: roboto
+    size: 14
+  - file: "gfonts://Roboto"
+    id: roboto_small
+    size: 10
+
+
+display:
+  - platform: ssd1306_i2c
+    model: "SSD1306 128x64"
+    update_interval: 5s
+    lambda: |-
+      it.printf(0, 0, id(roboto), "CO2: %.0f ppm", id(co2).state);
+      it.printf(0, 16, id(roboto), "T: %.1f C  H: %.0f%%", id(temp).state, id(hum).state);
+      it.printf(0, 34, id(roboto_small), "PM1: %.0f  PM2.5: %.0f", id(pm1).state, id(pm25).state);
+      it.printf(0, 48, id(roboto_small), "PM10: %.0f ug/m3", id(pm10).state);
+
+
+switch:
+  - platform: gpio
+    name: Blue LED on pin 16
+    pin: GPIO16
+    inverted: true
+  - platform: gpio
+    name: Red LED on pin 17
+    pin: GPIO17
+    inverted: true
+  - platform: gpio
+    name: X-Pin 7
+    pin: GPIO7
+    inverted: true
+
+light:
+  - platform: esp32_rmt_led_strip
+    rgb_order: GRB
+    chipset: ws2812
+    pin: GPIO8
+    num_leds: 1
+    name: "NeoPixel Light"
+    effects:
+      # Only non-addressable effects here: this is a single LED, so
+      # rainbow / color_wipe / scan / twinkle have nothing to travel across.
+      - random:
+      - random:
+          name: "Slow Random"
+          transition_length: 30s
+          update_interval: 30s
+      - pulse:
+      - pulse:
+          name: "Fast Pulse"
+          transition_length: 0.5s
+          update_interval: 0.5s
+      - strobe:
+      - flicker:
