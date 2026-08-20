@@ -159,6 +159,28 @@ sensor:
     pm_10_0:
       name: "PM 10.0"
       id: pm10
+    # Particle number counts (#/cm3), cumulative: each bin includes all
+    # smaller particles. The SPS30 measures these anyway, so exposing them
+    # is free. Names avoid non-ASCII and '<' so the web_server entity URLs
+    # stay curl-friendly.
+    pmc_0_5:
+      name: "PMC 0.5"
+      id: pmc05
+    pmc_1_0:
+      name: "PMC 1.0"
+      id: pmc1
+    pmc_2_5:
+      name: "PMC 2.5"
+      id: pmc25
+    pmc_4_0:
+      name: "PMC 4.0"
+      id: pmc4
+    pmc_10_0:
+      name: "PMC 10.0"
+      id: pmc10
+    pm_size:
+      name: "Typical Particle Size"
+      id: pm_size
 
   # --- Air Quality Index Sensor derived from PM2.5 and PM10 ---
   - platform: aqi
