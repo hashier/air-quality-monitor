@@ -3,7 +3,11 @@ esphome:
   friendly_name: Air Quality Monitor
 
 esp32:
-  board: esp32-c6-devkitc-1
+  # board: esp32-c6-devkitc-1
+  # Superseded by variant:. On esp-idf, board: is only the informational
+  # ESPHOME_BOARD string and has no effect on the build; variant: selects
+  # the actual target.
+  variant: esp32c6
   framework:
     type: esp-idf
 
