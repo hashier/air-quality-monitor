@@ -181,6 +181,10 @@ sensor:
     pm_size:
       name: "Typical Particle Size"
       id: pm_size
+      # Component default is accuracy_decimals: 0, which rounds every plausible
+      # indoor value (~0.3-1.4 um) to a useless "1". The PM/PMC sensors all
+      # default to 2 decimals; match them.
+      accuracy_decimals: 2
 
   # --- Air Quality Index Sensor derived from PM2.5 and PM10 ---
   - platform: aqi
