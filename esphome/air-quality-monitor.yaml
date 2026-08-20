@@ -201,6 +201,12 @@ sensor:
     id: co2_stall_count_sensor
     accuracy_decimals: 0
     entity_category: diagnostic
+    # total_increasing, not measurement: this is a monotonic counter that
+    # resets to 0 on reboot (restore_value: no) and via the reset button.
+    # HA treats a drop to zero as the start of a new cycle rather than a
+    # negative delta, and without any state_class HA keeps no long-term
+    # statistics at all, which is exactly the multi-day view this sensor exists for.
+    state_class: total_increasing
     lambda: 'return id(co2_stall_count);'
     update_interval: 30s
 
@@ -208,6 +214,9 @@ binary_sensor:
   - platform: template
     name: "CO2 Currently Stalled"
     entity_category: diagnostic
+    # Renders as Problem/OK instead of On/Off, and makes the entity usable
+    # by HA features that look for problem-class binary sensors.
+    device_class: problem
     lambda: 'return id(co2_in_stall);'
 
 button:
