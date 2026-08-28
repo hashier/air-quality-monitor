@@ -186,6 +186,39 @@ sensor:
       # default to 2 decimals; match them.
       accuracy_decimals: 2
 
+  # --- AHT21 Temperature/Humidity Sensor (co-located with the ENS160 below) ---
+  - platform: aht10
+    id: aht21_sensor
+    variant: AHT20   # AHT21 is protocol-compatible with AHT20; ESPHome has no separate AHT21 variant
+    update_interval: 10s
+    temperature:
+      name: "AHT21 Temperature"
+      id: aht21_temp
+    humidity:
+      name: "AHT21 Humidity"
+      id: aht21_hum
+
+  # --- ENS160 VOC/eCO2/AQI Sensor ---
+  # ADD pulled to GND -> default address 0x52, so it's omitted below (matches
+  # the scd4x/sps30/aht10 convention of not stating the default).
+  # ENS160's status register already withholds publishing during its own
+  # Warming Up (3 min) and Initial Startup (1 hr, first-ever power-on) phases,
+  # so no manual warm-up filter is needed. Compensation uses the AHT21 above
+  # rather than the SCD40, since it's physically co-located with the ENS160
+  # on this board.
+  - platform: ens160_i2c
+    id: ens160_sensor
+    update_interval: 10s
+    eco2:
+      name: "eCO2"
+    tvoc:
+      name: "TVOC"
+    aqi:
+      name: "AQI (ENS160)"
+    compensation:
+      temperature: aht21_temp
+      humidity: aht21_hum
+
   # --- Air Quality Index Sensor derived from PM2.5 and PM10 ---
   - platform: aqi
     name: "Air Quality Index (European)"
