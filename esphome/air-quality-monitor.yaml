@@ -66,8 +66,9 @@ interval:
     then:
       # Detect a stall: CO2 hasn't updated within 2.5x its poll interval (threshold
       # read at runtime so it tracks update_interval with no manual coupling).
+      # co2_last_update starts at 0, so until the first reading "elapsed" is the
+      # time since boot: a sensor that never delivers at all is caught as well.
       - lambda: |-
-          if (id(co2_last_update) == 0) return;  // no reading yet, nothing to watch
           uint32_t elapsed = millis() - id(co2_last_update);
           uint32_t threshold = id(scd40_sensor).get_update_interval() * 5 / 2;
           if (elapsed > threshold && !id(co2_in_stall)) {
@@ -77,7 +78,7 @@ interval:
           }
       # Recover: while stalled, re-init the SCD40 via raw I2C (stop -> 500ms -> start),
       # rate-limited to once per 30s. A successful re-init resumes readings, which
-      # clears co2_in_stall via the CO2 on_value.
+      # clears co2_in_stall via the CO2 on_raw_value.
       - if:
           condition:
             lambda: 'return id(co2_in_stall) && (millis() - id(co2_last_recovery) > 30000);'
@@ -121,8 +122,16 @@ sensor:
       filters:
         # Short 30s warm-up drop; CO2 settles fast and its spike is small.
         - lambda: 'return millis() < 30000 ? optional<float>{} : optional<float>(x);'
-      on_value:
+        # Median drops single-reading spikes before they can skew the average.
+        - median:
+            window_size: 3
+            send_every: 1
+        - throttle_average: 30s
+        - filter_out: nan
+      on_raw_value:
         # Fresh reading arrived: stamp the time and clear any active stall.
+        # Raw, not on_value: the filters above publish only every 30s, longer
+        # than the stall threshold, so the watch would see a permanent stall.
         then:
           - lambda: |-
               id(co2_last_update) = millis();
@@ -135,12 +144,16 @@ sensor:
         # (on-chip temp compensation converging), then settles. Drop until 5 min
         # uptime so restarts don't leave big warm-up spikes in history.
         - lambda: 'return millis() < 300000 ? optional<float>{} : optional<float>(x);'
+        - throttle_average: 30s
+        - filter_out: nan
     humidity:
       name: "Humidity"
       id: hum
       filters:
         # Same warm-up transient (~10% RH); RH is derived from temperature.
         - lambda: 'return millis() < 300000 ? optional<float>{} : optional<float>(x);'
+        - throttle_average: 30s
+        - filter_out: nan
     update_interval: 10s   # lowered from 30s for faster debug iteration / recovery
 
   # --- SPS30 Particulate Matter Sensor ---
@@ -150,15 +163,25 @@ sensor:
     pm_1_0:
       name: "PM 1.0"
       id: pm1
+      # Publish one averaged value every 30s instead of every 10s reading.
+      # The sensor still samples every 10s, so the average smooths noise, and
+      # Home Assistant stores a third of the rows. An empty window yields NaN,
+      # which is dropped so a silent sensor keeps its last value as before.
+      filters: &average_30s
+        - throttle_average: 30s
+        - filter_out: nan
     pm_2_5:
       name: "PM 2.5"
       id: pm25
+      filters: *average_30s
     pm_4_0:
       name: "PM 4.0"
       id: pm4
+      filters: *average_30s
     pm_10_0:
       name: "PM 10.0"
       id: pm10
+      filters: *average_30s
     # Particle number counts (#/cm3), cumulative: each bin includes all
     # smaller particles. The SPS30 measures these anyway, so exposing them
     # is free. Names avoid non-ASCII and '<' so the web_server entity URLs
@@ -166,18 +189,23 @@ sensor:
     pmc_0_5:
       name: "PMC 0.5"
       id: pmc05
+      filters: *average_30s
     pmc_1_0:
       name: "PMC 1.0"
       id: pmc1
+      filters: *average_30s
     pmc_2_5:
       name: "PMC 2.5"
       id: pmc25
+      filters: *average_30s
     pmc_4_0:
       name: "PMC 4.0"
       id: pmc4
+      filters: *average_30s
     pmc_10_0:
       name: "PMC 10.0"
       id: pmc10
+      filters: *average_30s
     pm_size:
       name: "Typical Particle Size"
       id: pm_size
@@ -185,6 +213,7 @@ sensor:
       # indoor value (~0.3-1.4 um) to a useless "1". The PM/PMC sensors all
       # default to 2 decimals; match them.
       accuracy_decimals: 2
+      filters: *average_30s
 
   # --- AHT21 Temperature/Humidity Sensor (co-located with the ENS160 below) ---
   - platform: aht10
@@ -194,9 +223,11 @@ sensor:
     temperature:
       name: "AHT21 Temperature"
       id: aht21_temp
+      filters: *average_30s
     humidity:
       name: "AHT21 Humidity"
       id: aht21_hum
+      filters: *average_30s
 
   # --- ENS160 VOC/eCO2/AQI Sensor ---
   # ADD pulled to GND -> default address 0x52, so it's omitted below (matches
@@ -308,11 +339,14 @@ display:
   - platform: ssd1306_i2c
     model: "SSD1306 128x64"
     update_interval: 5s
+    # Raw readings, not .state: the averaging exists for Home Assistant's
+    # graphs and database, while the display should react at once.
+    # Raw also bypasses the warm-up drops, so values are off right after boot.
     lambda: |-
-      it.printf(0, 0, id(roboto), "CO2: %.0f ppm", id(co2).state);
-      it.printf(0, 16, id(roboto), "T: %.1f C  H: %.0f%%", id(temp).state, id(hum).state);
-      it.printf(0, 34, id(roboto_small), "PM1: %.0f  PM2.5: %.0f", id(pm1).state, id(pm25).state);
-      it.printf(0, 48, id(roboto_small), "PM10: %.0f ug/m3", id(pm10).state);
+      it.printf(0, 0, id(roboto), "CO2: %.0f ppm", id(co2).get_raw_state());
+      it.printf(0, 16, id(roboto), "T: %.1f C  H: %.0f%%", id(temp).get_raw_state(), id(hum).get_raw_state());
+      it.printf(0, 34, id(roboto_small), "PM1: %.0f  PM2.5: %.0f", id(pm1).get_raw_state(), id(pm25).get_raw_state());
+      it.printf(0, 48, id(roboto_small), "PM10: %.0f ug/m3", id(pm10).get_raw_state());
 
 
 switch:
