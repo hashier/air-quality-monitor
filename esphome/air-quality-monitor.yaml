@@ -16,6 +16,8 @@ logger:
 api:
   encryption:
     key: !secret aqm_api_key
+  # The default 15 min reboots the device every 15 min while Home Assistant is down
+  reboot_timeout: 1h
 
 ota:
   - platform: esphome
