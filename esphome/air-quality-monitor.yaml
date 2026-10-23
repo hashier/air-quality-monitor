@@ -21,7 +21,8 @@ api:
 
 ota:
   - platform: esphome
-    password: !secret aqm_ota_password
+    # Uploads are encrypted with the api encryption key
+    encryption:
 
 wifi:
   # Tried in order, falls back to the next on connection failure
@@ -40,6 +41,9 @@ captive_portal:
 
 web_server:
     port: 80
+    # Without this, /update accepts unauthenticated firmware uploads on port 80 and bypasses the
+    # OTA encryption; uploads through the web page then only work on the fallback hotspot
+    ota: false
 
 # --- SCD40 stall monitoring + auto-recovery ---
 # Watches whether CO2 keeps updating; if it goes stale (sensor knocked out of
