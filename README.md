@@ -41,3 +41,4 @@ Work in progress: currently on a breadboard. Custom PCB and enclosure are next.
 ## To test
 
 - **Separate 3.3V regulator for the SCD40:** power it from 5V through its own LDO (AP2112K-3.3, 1 µF on input and output, EN tied to VIN) instead of the ESP32 board's 3V3 pin. Sensirion's SCD4x datasheet recommends a separate LDO and allows at most 30 mV supply ripple, and the SCD40 peaks at 205 mA while the ESP32's WiFi bursts share the same regulator. Compare `CO2 Stall Count` before and after.
+- **Everything on one I2C bus:** SCD40, OLED and SPS30 together, with the SPS30 on a cable as long as the case needs. Each breakout brings its own pull-ups, so check whether the bus still works with all of them in parallel, and whether the SPS30 needs extra ones.
