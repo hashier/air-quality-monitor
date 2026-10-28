@@ -37,3 +37,7 @@ esphome run air-quality-monitor.yaml
 ## Status
 
 Work in progress: currently on a breadboard. Custom PCB and enclosure are next.
+
+## To test
+
+- **Separate 3.3V regulator for the SCD40:** power it from 5V through its own LDO (AP2112K-3.3, 1 µF on input and output, EN tied to VIN) instead of the ESP32 board's 3V3 pin. Sensirion's SCD4x datasheet recommends a separate LDO and allows at most 30 mV supply ripple, and the SCD40 peaks at 205 mA while the ESP32's WiFi bursts share the same regulator. Compare `CO2 Stall Count` before and after.
