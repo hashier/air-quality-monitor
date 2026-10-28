@@ -9,6 +9,8 @@ esphome/secrets.yaml
 # KiCad regenerable artifacts
 kicad/fp-info-cache
 kicad/*-backups/
+# KiCad Local History: autosave snapshots in their own git repo
+kicad/.history/
 # Per-user editor state (window layout, open sheets), not design data
 kicad/*.kicad_prl
 # Autosave and lock files from an open KiCad session
