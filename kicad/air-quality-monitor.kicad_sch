@@ -10185,7 +10185,18 @@
 			)
 		)
 	)
-	(text "C6/C7: optional 100-470uF on the dev board 3V3 against brownout."
+	(text "C6/C7: optional, 100uF + 470uF on the dev board 3V3"
+		(exclude_from_sim no)
+		(at 167.64 157.48 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d889a15d-67f8-42d9-a6b2-886ca956e8ef")
+	)
+	(text "(570uF stopped the S3 brownout)."
 		(exclude_from_sim no)
 		(at 167.64 161.29 0)
 		(effects
@@ -10194,7 +10205,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "d889a15d-67f8-42d9-a6b2-886ca956e8ef")
+		(uuid "fe2cbb92-ef83-426e-85a3-3210b552db44")
 	)
 	(wire
 		(pts
@@ -10310,7 +10321,7 @@
 				)
 			)
 		)
-		(property "Value" "470uF"
+		(property "Value" "100uF"
 			(at 178.435 177.8 0)
 			(effects
 				(font

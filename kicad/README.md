@@ -56,8 +56,9 @@ for a later version.
     in the path. Pull the cap before plugging in both USB cables, otherwise the
     device on the PCB's USB-C gets fed backwards. With the cap on, the dev board's
     own USB also powers the whole PCB;
-  - two optional 100-470µF electrolytics (C6, C7, not fitted) on the dev board's
-    3V3 pin: 570µF there stopped the same S3 board's brownout loop at 5.0V.
+  - two optional electrolytics (C6 100µF, C7 470µF, not fitted) on the dev
+    board's 3V3 pin: that pair (570µF) stopped the same S3 board's brownout loop
+    at 5.0V.
 
 ### Dev board
 
