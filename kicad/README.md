@@ -32,7 +32,8 @@ for a later version.
   each get their own 5.1 kΩ resistor to GND, so a USB-C charger turns on 5V.
 - **5V rail** feeds the SPS30 and both 3.3V regulators directly.
 - **Dev board 5V pin** (J1 pin 14) is fed from the 5V rail through a Schottky
-  diode, so plugging in the dev board's own USB at the same time can't push
+  diode, which a jumper cap bypasses by default (see below). With the cap
+  pulled, plugging in the dev board's own USB at the same time can't push
   current back into the PCB's USB-C. In Espressif's DevKitC-1 schematic v1.4,
   each USB port reaches `VCC_5V` through a 1N5819, and `VCC_5V` is the 5V pin
   with no diode in between.
@@ -48,9 +49,13 @@ for a later version.
     cut it and put a solder blob on the dev board side. Solder jumpers,
     not pin headers with caps, because a push-fit contact in the SCD40's supply
     is the kind of fault behind the earlier stalls;
-  - an open solder jumper (`SolderJumper_2_Open`) across the Schottky diode lets
-    the dev board's own USB power the whole PCB when the PCB's USB-C is not fitted.
-    With that jumper bridged, never plug in both USB cables.
+  - a 2-pin header with a jumper cap (`Jumper_2_Bridged`) across the Schottky
+    diode, cap on by default: the dev board gets the full 5V, not 5V minus the
+    diode drop, likely too little for its AMS1117 (an ESP32-S3 board went into
+    a brownout loop at 4.9V on its 5V pin). A loose cap only puts the diode back
+    in the path. Pull the cap before plugging in both USB cables, otherwise the
+    device on the PCB's USB-C gets fed backwards. With the cap on, the dev board's
+    own USB also powers the whole PCB.
 
 ### Dev board
 
