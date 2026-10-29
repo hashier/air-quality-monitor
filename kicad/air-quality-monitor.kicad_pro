@@ -243,7 +243,7 @@
       "internal_id": "",
       "mfg": "",
       "mpn": "",
-      "sch_revision": ""
+      "sch_revision": "v1 draft, untested"
     },
     "layer_pairs": [],
     "layer_presets": [],
@@ -662,7 +662,7 @@
       {
         "filename": "air-quality-monitor.kicad_sch",
         "name": "air-quality-monitor",
-        "uuid": "00000000-0000-0000-0000-000000000000"
+        "uuid": "85087b8b-0952-43b2-9f12-044aaff7be59"
       }
     ],
     "used_designators": "",
@@ -671,7 +671,7 @@
   "sheets": [
     [
       "85087b8b-0952-43b2-9f12-044aaff7be59",
-      "Root"
+      "air-quality-monitor"
     ]
   ],
   "text_variables": {},
