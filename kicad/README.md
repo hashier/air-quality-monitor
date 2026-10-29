@@ -42,9 +42,10 @@ for a later version.
   - **3V3_SCD** feeds only the SCD40. Pending the LDO test.
   - **3V3_AUX** feeds the OLED and the Qwiic sockets.
 - **Fallback to the dev board's rails:**
-  - each 3.3V rail can be switched to the dev board's 3V3 pin with an open 3-pad
-    solder jumper (`SolderJumper_3_Open`): a solder blob on the LDO side or the
-    dev board side, switched with solder wick, nothing to cut. Solder jumpers,
+  - each 3.3V rail can be switched to the dev board's 3V3 pin with a 3-pad
+    solder jumper (`SolderJumper_3_Bridged12`): a thin trace joins the LDO side
+    from the factory, so the board works without soldering a jumper; to switch,
+    cut it and put a solder blob on the dev board side. Solder jumpers,
     not pin headers with caps, because a push-fit contact in the SCD40's supply
     is the kind of fault behind the earlier stalls;
   - an open solder jumper (`SolderJumper_2_Open`) across the Schottky diode lets
