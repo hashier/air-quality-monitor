@@ -3856,7 +3856,7 @@
 	)
 	(text "I2C: SDA = GPIO21, SCL = GPIO22, 100 kHz (SPS30 max)."
 		(exclude_from_sim no)
-		(at 236.22 162.56 0)
+		(at 236.22 172.72 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4048,7 +4048,7 @@
 	)
 	(wire
 		(pts
-			(xy 259.08 144.78) (xy 261.62 144.78)
+			(xy 259.08 154.94) (xy 261.62 154.94)
 		)
 		(stroke
 			(width 0)
@@ -4098,7 +4098,7 @@
 	)
 	(wire
 		(pts
-			(xy 248.92 152.4) (xy 246.38 152.4)
+			(xy 248.92 165.1) (xy 246.38 165.1)
 		)
 		(stroke
 			(width 0)
@@ -4168,7 +4168,7 @@
 	)
 	(wire
 		(pts
-			(xy 259.08 121.92) (xy 261.62 121.92)
+			(xy 259.08 124.46) (xy 261.62 124.46)
 		)
 		(stroke
 			(width 0)
@@ -4178,7 +4178,7 @@
 	)
 	(wire
 		(pts
-			(xy 259.08 129.54) (xy 261.62 129.54)
+			(xy 259.08 134.62) (xy 261.62 134.62)
 		)
 		(stroke
 			(width 0)
@@ -4308,7 +4308,7 @@
 	)
 	(wire
 		(pts
-			(xy 259.08 152.4) (xy 261.62 152.4)
+			(xy 259.08 165.1) (xy 261.62 165.1)
 		)
 		(stroke
 			(width 0)
@@ -4328,7 +4328,7 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 179.07) (xy 177.8 181.61)
+			(xy 177.8 181.61) (xy 177.8 184.15)
 		)
 		(stroke
 			(width 0)
@@ -4368,7 +4368,7 @@
 	)
 	(wire
 		(pts
-			(xy 248.92 144.78) (xy 246.38 144.78)
+			(xy 248.92 154.94) (xy 246.38 154.94)
 		)
 		(stroke
 			(width 0)
@@ -4518,7 +4518,7 @@
 	)
 	(wire
 		(pts
-			(xy 190.5 171.45) (xy 190.5 168.91)
+			(xy 190.5 173.99) (xy 190.5 171.45)
 		)
 		(stroke
 			(width 0)
@@ -4538,7 +4538,7 @@
 	)
 	(wire
 		(pts
-			(xy 248.92 129.54) (xy 246.38 129.54)
+			(xy 248.92 134.62) (xy 246.38 134.62)
 		)
 		(stroke
 			(width 0)
@@ -4558,7 +4558,7 @@
 	)
 	(wire
 		(pts
-			(xy 248.92 121.92) (xy 246.38 121.92)
+			(xy 248.92 124.46) (xy 246.38 124.46)
 		)
 		(stroke
 			(width 0)
@@ -4708,7 +4708,7 @@
 	)
 	(wire
 		(pts
-			(xy 190.5 179.07) (xy 190.5 181.61)
+			(xy 190.5 181.61) (xy 190.5 184.15)
 		)
 		(stroke
 			(width 0)
@@ -4758,7 +4758,7 @@
 	)
 	(wire
 		(pts
-			(xy 259.08 137.16) (xy 261.62 137.16)
+			(xy 259.08 144.78) (xy 261.62 144.78)
 		)
 		(stroke
 			(width 0)
@@ -4778,7 +4778,7 @@
 	)
 	(wire
 		(pts
-			(xy 248.92 137.16) (xy 246.38 137.16)
+			(xy 248.92 144.78) (xy 246.38 144.78)
 		)
 		(stroke
 			(width 0)
@@ -4848,7 +4848,7 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 171.45) (xy 177.8 168.91)
+			(xy 177.8 173.99) (xy 177.8 171.45)
 		)
 		(stroke
 			(width 0)
@@ -4897,7 +4897,7 @@
 		(uuid "2548ecb3-7733-49e9-adb6-a1c876fdedff")
 	)
 	(label "DEV_3V3"
-		(at 190.5 168.91 90)
+		(at 190.5 171.45 90)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4987,7 +4987,7 @@
 		(uuid "4c1d421c-0e5e-4325-b87c-3cadef7cc168")
 	)
 	(label "DEV_5V"
-		(at 246.38 121.92 180)
+		(at 246.38 124.46 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5037,7 +5037,7 @@
 		(uuid "5d79fc04-a163-4a96-b065-ceaabc234ae6")
 	)
 	(label "DEV_IO21"
-		(at 246.38 144.78 180)
+		(at 246.38 154.94 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5047,7 +5047,7 @@
 		(uuid "5f4e27fa-7cc7-43b4-bbdd-afb3f13fe6d3")
 	)
 	(label "5V_DEV"
-		(at 261.62 121.92 0)
+		(at 261.62 124.46 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5067,7 +5067,7 @@
 		(uuid "7a6e4c61-5356-4130-9822-ed0f5e62e457")
 	)
 	(label "DEV_3V3"
-		(at 177.8 168.91 90)
+		(at 177.8 171.45 90)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5077,7 +5077,7 @@
 		(uuid "7f6139b9-3778-4da0-a4a1-2663ea87b18e")
 	)
 	(label "DEV_IO22"
-		(at 246.38 152.4 180)
+		(at 246.38 165.1 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5107,7 +5107,7 @@
 		(uuid "8d2f3077-1393-45d0-b359-f444e920e401")
 	)
 	(label "DEV_GND1"
-		(at 246.38 129.54 180)
+		(at 246.38 134.62 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5137,7 +5137,7 @@
 		(uuid "92917a67-215a-4094-842e-4ca01eda6a5a")
 	)
 	(label "SCL"
-		(at 261.62 152.4 0)
+		(at 261.62 165.1 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5147,7 +5147,7 @@
 		(uuid "9540be9d-7f55-4752-a0b4-1ae7eff28125")
 	)
 	(label "DEV_GND2"
-		(at 246.38 137.16 180)
+		(at 246.38 144.78 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5317,7 +5317,7 @@
 		(uuid "ec59f19a-3078-437d-a431-21f7e7fb4699")
 	)
 	(label "SDA"
-		(at 261.62 144.78 0)
+		(at 261.62 154.94 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5759,7 +5759,7 @@
 	)
 	(symbol
 		(lib_id "Jumper:SolderJumper_2_Bridged")
-		(at 254 152.4 0)
+		(at 254 165.1 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5770,16 +5770,6 @@
 		(fields_autoplaced yes)
 		(uuid "1b810c60-81c3-42d8-aeb2-98203bbc80ca")
 		(property "Reference" "JP9"
-			(at 254 156.21 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "cut to free"
 			(at 254 158.75 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5789,8 +5779,18 @@
 				)
 			)
 		)
+		(property "Value" "cut to free"
+			(at 254 161.29 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Footprint" "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm"
-			(at 254 152.4 0)
+			(at 254 165.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5801,7 +5801,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 254 158.75 0)
+			(at 254 171.45 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5812,7 +5812,7 @@
 			)
 		)
 		(property "Description" "Solder Jumper, 2-pole, closed/bridged"
-			(at 254 157.48 0)
+			(at 254 170.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5839,7 +5839,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 190.5 181.61 0)
+		(at 190.5 184.15 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5850,7 +5850,7 @@
 		(fields_autoplaced yes)
 		(uuid "22117da2-01ee-4c40-b29c-2b7e39d1e28c")
 		(property "Reference" "#PWR033"
-			(at 190.5 187.96 0)
+			(at 190.5 190.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5861,7 +5861,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 193.04 182.8799 0)
+			(at 193.04 185.42 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5872,7 +5872,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 190.5 181.61 0)
+			(at 190.5 184.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5883,7 +5883,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 190.5 181.61 0)
+			(at 190.5 184.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5894,7 +5894,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 190.5 181.61 0)
+			(at 190.5 184.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6076,7 +6076,7 @@
 	)
 	(symbol
 		(lib_id "Jumper:SolderJumper_2_Bridged")
-		(at 254 121.92 0)
+		(at 254 124.46 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6087,16 +6087,6 @@
 		(fields_autoplaced yes)
 		(uuid "2ba3d53c-765c-470e-b27a-429dc78c4b5a")
 		(property "Reference" "JP5"
-			(at 254 115.57 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "cut to free"
 			(at 254 118.11 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6106,8 +6096,18 @@
 				)
 			)
 		)
+		(property "Value" "cut to free"
+			(at 254 120.65 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Footprint" "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm"
-			(at 254 121.92 0)
+			(at 254 124.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6118,7 +6118,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 254 128.27 0)
+			(at 254 130.81 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6129,7 +6129,7 @@
 			)
 		)
 		(property "Description" "Solder Jumper, 2-pole, closed/bridged"
-			(at 254 127 0)
+			(at 254 129.54 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6789,7 +6789,7 @@
 	)
 	(symbol
 		(lib_id "Jumper:SolderJumper_2_Bridged")
-		(at 254 129.54 0)
+		(at 254 134.62 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6800,7 +6800,7 @@
 		(fields_autoplaced yes)
 		(uuid "473f3c94-6572-4e03-a7e2-913313dffba0")
 		(property "Reference" "JP6"
-			(at 254 123.19 0)
+			(at 254 128.27 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6810,7 +6810,7 @@
 			)
 		)
 		(property "Value" "cut to free"
-			(at 254 125.73 0)
+			(at 254 130.81 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6820,7 +6820,7 @@
 			)
 		)
 		(property "Footprint" "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm"
-			(at 254 129.54 0)
+			(at 254 134.62 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6831,7 +6831,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 254 135.89 0)
+			(at 254 140.97 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6842,7 +6842,7 @@
 			)
 		)
 		(property "Description" "Solder Jumper, 2-pole, closed/bridged"
-			(at 254 134.62 0)
+			(at 254 139.7 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7026,7 +7026,7 @@
 	)
 	(symbol
 		(lib_id "Jumper:SolderJumper_2_Bridged")
-		(at 254 144.78 0)
+		(at 254 154.94 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7037,7 +7037,7 @@
 		(fields_autoplaced yes)
 		(uuid "4d3014ed-9ed1-432b-b694-4da376cf6dc2")
 		(property "Reference" "JP8"
-			(at 254 138.43 0)
+			(at 254 148.59 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7047,7 +7047,7 @@
 			)
 		)
 		(property "Value" "cut to free"
-			(at 254 140.97 0)
+			(at 254 151.13 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7057,7 +7057,7 @@
 			)
 		)
 		(property "Footprint" "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm"
-			(at 254 144.78 0)
+			(at 254 154.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7068,7 +7068,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 254 151.13 0)
+			(at 254 161.29 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7079,7 +7079,7 @@
 			)
 		)
 		(property "Description" "Solder Jumper, 2-pole, closed/bridged"
-			(at 254 149.86 0)
+			(at 254 160.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8012,7 +8012,7 @@
 	)
 	(symbol
 		(lib_id "Jumper:SolderJumper_2_Bridged")
-		(at 254 137.16 0)
+		(at 254 144.78 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8023,7 +8023,7 @@
 		(fields_autoplaced yes)
 		(uuid "9d3c4a13-fd7e-4235-af3e-d39862068300")
 		(property "Reference" "JP7"
-			(at 254 130.81 0)
+			(at 254 138.43 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8033,7 +8033,7 @@
 			)
 		)
 		(property "Value" "cut to free"
-			(at 254 133.35 0)
+			(at 254 140.97 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8043,7 +8043,7 @@
 			)
 		)
 		(property "Footprint" "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm"
-			(at 254 137.16 0)
+			(at 254 144.78 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8054,7 +8054,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 254 143.51 0)
+			(at 254 151.13 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8065,7 +8065,7 @@
 			)
 		)
 		(property "Description" "Solder Jumper, 2-pole, closed/bridged"
-			(at 254 142.24 0)
+			(at 254 149.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8834,7 +8834,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 261.62 129.54 90)
+		(at 261.62 134.62 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8845,7 +8845,7 @@
 		(fields_autoplaced yes)
 		(uuid "c5b0f26e-dcaf-4956-bafc-ab6f2499aaf0")
 		(property "Reference" "#PWR024"
-			(at 267.97 129.54 0)
+			(at 267.97 134.62 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8856,7 +8856,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 265.43 129.5399 90)
+			(at 265.43 134.62 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8867,7 +8867,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 261.62 129.54 0)
+			(at 261.62 134.62 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8878,7 +8878,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 261.62 129.54 0)
+			(at 261.62 134.62 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8889,7 +8889,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 261.62 129.54 0)
+			(at 261.62 134.62 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8913,7 +8913,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 261.62 137.16 90)
+		(at 261.62 144.78 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8924,7 +8924,7 @@
 		(fields_autoplaced yes)
 		(uuid "c5b8902b-ccad-409e-9299-f2f8096a2d6f")
 		(property "Reference" "#PWR025"
-			(at 267.97 137.16 0)
+			(at 267.97 144.78 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8935,7 +8935,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 265.43 137.1599 90)
+			(at 265.43 144.78 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8946,7 +8946,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 261.62 137.16 0)
+			(at 261.62 144.78 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8957,7 +8957,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 261.62 137.16 0)
+			(at 261.62 144.78 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8968,7 +8968,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 261.62 137.16 0)
+			(at 261.62 144.78 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8992,7 +8992,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 177.8 181.61 0)
+		(at 177.8 184.15 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9003,7 +9003,7 @@
 		(fields_autoplaced yes)
 		(uuid "c6753378-935e-4e48-a687-6a910e06ec95")
 		(property "Reference" "#PWR032"
-			(at 177.8 187.96 0)
+			(at 177.8 190.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9014,7 +9014,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 180.34 182.8799 0)
+			(at 180.34 185.42 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9025,7 +9025,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 177.8 181.61 0)
+			(at 177.8 184.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9036,7 +9036,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 177.8 181.61 0)
+			(at 177.8 184.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9047,7 +9047,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 177.8 181.61 0)
+			(at 177.8 184.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9149,7 +9149,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Polarized")
-		(at 177.8 175.26 0)
+		(at 177.8 177.8 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9160,7 +9160,7 @@
 		(fields_autoplaced yes)
 		(uuid "cb45756d-fca6-480f-9668-c3f3562ad78d")
 		(property "Reference" "C6"
-			(at 181.61 173.1009 0)
+			(at 181.61 175.641 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9171,7 +9171,7 @@
 			)
 		)
 		(property "Value" "100uF"
-			(at 181.61 175.6409 0)
+			(at 181.61 178.181 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9182,7 +9182,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_THT:CP_Radial_D8.0mm_P2.50mm"
-			(at 178.7652 179.07 0)
+			(at 178.7652 181.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9193,7 +9193,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 177.8 175.26 0)
+			(at 177.8 177.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9204,7 +9204,7 @@
 			)
 		)
 		(property "Description" "Polarized capacitor"
-			(at 177.8 175.26 0)
+			(at 177.8 177.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10049,7 +10049,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Polarized")
-		(at 190.5 175.26 0)
+		(at 190.5 177.8 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10060,7 +10060,7 @@
 		(fields_autoplaced yes)
 		(uuid "e454f98a-141f-4e5a-b06b-d45f1a8c70e0")
 		(property "Reference" "C7"
-			(at 194.31 173.1009 0)
+			(at 194.31 175.641 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10071,7 +10071,7 @@
 			)
 		)
 		(property "Value" "470uF"
-			(at 194.31 175.6409 0)
+			(at 194.31 178.181 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10082,7 +10082,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_THT:CP_Radial_D8.0mm_P2.50mm"
-			(at 191.4652 179.07 0)
+			(at 191.4652 181.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10093,7 +10093,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 190.5 175.26 0)
+			(at 190.5 177.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10104,7 +10104,7 @@
 			)
 		)
 		(property "Description" "Polarized capacitor"
-			(at 190.5 175.26 0)
+			(at 190.5 177.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
