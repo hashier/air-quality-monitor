@@ -55,7 +55,9 @@ for a later version.
     a brownout loop at 4.9V on its 5V pin). A loose cap only puts the diode back
     in the path. Pull the cap before plugging in both USB cables, otherwise the
     device on the PCB's USB-C gets fed backwards. With the cap on, the dev board's
-    own USB also powers the whole PCB.
+    own USB also powers the whole PCB;
+  - two optional 100-470µF electrolytics (C6, C7, not fitted) on the dev board's
+    3V3 pin: 570µF there stopped the same S3 board's brownout loop at 5.0V.
 
 ### Dev board
 
