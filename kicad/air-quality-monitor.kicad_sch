@@ -3895,10 +3895,22 @@
 		(uuid "64592492-89cb-4bbb-b660-cc6b7cc58add")
 	)
 	(junction
+		(at 34.29 149.86)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a09df3eb-b1d4-44d4-8031-d7345edeeb33")
+	)
+	(junction
 		(at 43.18 149.86)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c0bf6833-aab1-417b-bf4b-313d71c806a7")
+	)
+	(junction
+		(at 34.29 114.3)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c8c590ce-9108-47f1-a4a9-1b2d4e1b1939")
 	)
 	(junction
 		(at 109.22 215.9)
@@ -4118,16 +4130,6 @@
 	)
 	(wire
 		(pts
-			(xy 53.34 58.42) (xy 55.88 58.42)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "244edc2a-2a0d-48ae-aa5b-120b79c6b56b")
-	)
-	(wire
-		(pts
 			(xy 33.02 215.9) (xy 30.48 215.9)
 		)
 		(stroke
@@ -4138,7 +4140,7 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 149.86) (xy 40.64 149.86)
+			(xy 43.18 149.86) (xy 34.29 149.86)
 		)
 		(stroke
 			(width 0)
@@ -4188,7 +4190,7 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 114.3) (xy 40.64 114.3)
+			(xy 43.18 114.3) (xy 34.29 114.3)
 		)
 		(stroke
 			(width 0)
@@ -4225,16 +4227,6 @@
 			(type default)
 		)
 		(uuid "49219528-20ad-498c-a467-d06334be954d")
-	)
-	(wire
-		(pts
-			(xy 30.48 149.86) (xy 30.48 147.32)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4fd85a2f-566c-4930-8d77-ce13590206d3")
 	)
 	(wire
 		(pts
@@ -4308,6 +4300,16 @@
 	)
 	(wire
 		(pts
+			(xy 53.34 58.42) (xy 55.88 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "61aeed62-455d-4304-86c6-f9a97574c061")
+	)
+	(wire
+		(pts
 			(xy 259.08 165.1) (xy 261.62 165.1)
 		)
 		(stroke
@@ -4318,7 +4320,7 @@
 	)
 	(wire
 		(pts
-			(xy 30.48 157.48) (xy 30.48 160.02)
+			(xy 34.29 157.48) (xy 34.29 160.02)
 		)
 		(stroke
 			(width 0)
@@ -4375,16 +4377,6 @@
 			(type default)
 		)
 		(uuid "780a2a3f-961c-432c-8dab-5bbfd501437d")
-	)
-	(wire
-		(pts
-			(xy 30.48 114.3) (xy 30.48 111.76)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7b64baf7-07fb-4a13-9c7d-be117654b589")
 	)
 	(wire
 		(pts
@@ -4498,7 +4490,7 @@
 	)
 	(wire
 		(pts
-			(xy 30.48 121.92) (xy 30.48 124.46)
+			(xy 34.29 121.92) (xy 34.29 124.46)
 		)
 		(stroke
 			(width 0)
@@ -4658,6 +4650,16 @@
 	)
 	(wire
 		(pts
+			(xy 34.29 114.3) (xy 29.21 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ca0a2402-72a6-4a6f-9b55-16bc275cf425")
+	)
+	(wire
+		(pts
 			(xy 109.22 215.9) (xy 106.68 215.9)
 		)
 		(stroke
@@ -4735,6 +4737,16 @@
 			(type default)
 		)
 		(uuid "df43fa87-4a74-4987-9ca5-11df769d65fa")
+	)
+	(wire
+		(pts
+			(xy 34.29 149.86) (xy 29.21 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dfe0d91c-4017-4152-ad62-8535ff36d158")
 	)
 	(wire
 		(pts
@@ -5997,7 +6009,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 30.48 160.02 0)
+		(at 34.29 160.02 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6008,7 +6020,7 @@
 		(fields_autoplaced yes)
 		(uuid "2b81b894-0c1f-4b4c-81cb-f88ca6e4ff11")
 		(property "Reference" "#PWR022"
-			(at 30.48 166.37 0)
+			(at 34.29 166.37 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6019,7 +6031,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 33.02 161.2899 0)
+			(at 36.83 161.2899 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6030,7 +6042,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 30.48 160.02 0)
+			(at 34.29 160.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6041,7 +6053,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 30.48 160.02 0)
+			(at 34.29 160.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6052,7 +6064,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 30.48 160.02 0)
+			(at 34.29 160.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6313,85 +6325,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+5V")
-		(at 30.48 111.76 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "343cb28c-3ae2-4628-9f93-5d83015dd00b")
-		(property "Reference" "#PWR016"
-			(at 30.48 115.57 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+5V"
-			(at 33.02 110.4899 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 30.48 111.76 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 30.48 111.76 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 30.48 111.76 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "8d075e95-d815-4af3-98f0-bcfc60a8ec0e")
-		)
-		(instances
-			(project "air-quality-monitor"
-				(path "/85087b8b-0952-43b2-9f12-044aaff7be59"
-					(reference "#PWR016")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:PWR_FLAG")
 		(at 111.76 55.88 0)
 		(unit 1)
@@ -6463,85 +6396,6 @@
 			(project "air-quality-monitor"
 				(path "/85087b8b-0952-43b2-9f12-044aaff7be59"
 					(reference "#FLG01")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 55.88 58.42 270)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "39a6c69d-1479-4575-b673-3467f5be0182")
-		(property "Reference" "#PWR001"
-			(at 52.07 58.42 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+5V"
-			(at 59.69 58.4199 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 55.88 58.42 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 55.88 58.42 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 55.88 58.42 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "375befba-8206-4ef6-8162-594a6d3a3f8c")
-		)
-		(instances
-			(project "air-quality-monitor"
-				(path "/85087b8b-0952-43b2-9f12-044aaff7be59"
-					(reference "#PWR001")
 					(unit 1)
 				)
 			)
@@ -9071,7 +8925,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 40.64 114.3 90)
+		(at 29.21 114.3 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9082,7 +8936,7 @@
 		(fields_autoplaced yes)
 		(uuid "c6ca94dc-6425-476c-ab2d-fd167595da77")
 		(property "Reference" "#PWR014"
-			(at 44.45 114.3 0)
+			(at 33.02 114.3 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9093,7 +8947,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 39.37 111.76 90)
+			(at 27.94 111.76 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9103,7 +8957,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 40.64 114.3 0)
+			(at 29.21 114.3 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9114,7 +8968,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 40.64 114.3 0)
+			(at 29.21 114.3 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9125,7 +8979,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 40.64 114.3 0)
+			(at 29.21 114.3 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9231,7 +9085,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 40.64 149.86 90)
+		(at 29.21 149.86 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9242,7 +9096,7 @@
 		(fields_autoplaced yes)
 		(uuid "cc9afe8b-aa38-45b7-a1cb-8b449198d4c2")
 		(property "Reference" "#PWR019"
-			(at 44.45 149.86 0)
+			(at 33.02 149.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9253,7 +9107,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 39.37 147.32 90)
+			(at 27.94 147.32 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9263,7 +9117,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 40.64 149.86 0)
+			(at 29.21 149.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9274,7 +9128,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 40.64 149.86 0)
+			(at 29.21 149.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9285,7 +9139,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 40.64 149.86 0)
+			(at 29.21 149.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9570,7 +9424,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 30.48 153.67 0)
+		(at 34.29 153.67 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9581,7 +9435,7 @@
 		(fields_autoplaced yes)
 		(uuid "d60dfe41-c613-4ee8-98e6-87d8f4e6e356")
 		(property "Reference" "C4"
-			(at 34.29 152.3999 0)
+			(at 38.1 152.3999 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9592,7 +9446,7 @@
 			)
 		)
 		(property "Value" "1uF"
-			(at 34.29 154.9399 0)
+			(at 38.1 154.9399 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9603,7 +9457,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
-			(at 31.4452 157.48 0)
+			(at 35.2552 157.48 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9614,7 +9468,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 30.48 153.67 0)
+			(at 34.29 153.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9625,7 +9479,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 30.48 153.67 0)
+			(at 34.29 153.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9753,13 +9607,14 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 57.15 55.88 90)
+			(at 59.69 58.4199 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -9809,7 +9664,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 30.48 118.11 0)
+		(at 34.29 118.11 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9820,7 +9675,7 @@
 		(fields_autoplaced yes)
 		(uuid "d9d2092b-8c79-4655-bb7b-d68a67053d54")
 		(property "Reference" "C2"
-			(at 34.29 116.8399 0)
+			(at 38.1 116.8399 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9831,7 +9686,7 @@
 			)
 		)
 		(property "Value" "1uF"
-			(at 34.29 119.3799 0)
+			(at 38.1 119.3799 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9842,7 +9697,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
-			(at 31.4452 121.92 0)
+			(at 35.2552 121.92 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9853,7 +9708,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 30.48 118.11 0)
+			(at 34.29 118.11 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9864,7 +9719,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 30.48 118.11 0)
+			(at 34.29 118.11 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9891,7 +9746,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 30.48 124.46 0)
+		(at 34.29 124.46 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9902,7 +9757,7 @@
 		(fields_autoplaced yes)
 		(uuid "dcd7f4e8-f52a-474f-84d0-c5621fab8ab1")
 		(property "Reference" "#PWR017"
-			(at 30.48 130.81 0)
+			(at 34.29 130.81 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9913,7 +9768,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 33.02 125.7299 0)
+			(at 36.83 125.7299 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9924,7 +9779,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 30.48 124.46 0)
+			(at 34.29 124.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9935,7 +9790,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 30.48 124.46 0)
+			(at 34.29 124.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9946,7 +9801,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 30.48 124.46 0)
+			(at 34.29 124.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10285,85 +10140,6 @@
 			(project "air-quality-monitor"
 				(path "/85087b8b-0952-43b2-9f12-044aaff7be59"
 					(reference "R2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 30.48 147.32 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ec8301f7-7527-4a48-a8ab-e7b2d669e0a7")
-		(property "Reference" "#PWR021"
-			(at 30.48 151.13 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+5V"
-			(at 33.02 146.0499 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 30.48 147.32 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 30.48 147.32 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 30.48 147.32 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "34714271-37cc-412b-8528-2dfddbfc2d7f")
-		)
-		(instances
-			(project "air-quality-monitor"
-				(path "/85087b8b-0952-43b2-9f12-044aaff7be59"
-					(reference "#PWR021")
 					(unit 1)
 				)
 			)
