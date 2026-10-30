@@ -4908,7 +4908,7 @@
 		)
 		(uuid "2548ecb3-7733-49e9-adb6-a1c876fdedff")
 	)
-	(label "DEV_3V3"
+	(label "DEVPIN_3V3"
 		(at 190.5 171.45 90)
 		(effects
 			(font
@@ -4968,7 +4968,7 @@
 		)
 		(uuid "3fa3d7e3-4b21-477a-9cfa-e6c20347a153")
 	)
-	(label "DEV_IO22"
+	(label "DEVPIN_IO22"
 		(at 220.98 125.73 0)
 		(effects
 			(font
@@ -4998,7 +4998,7 @@
 		)
 		(uuid "4c1d421c-0e5e-4325-b87c-3cadef7cc168")
 	)
-	(label "DEV_5V"
+	(label "DEVPIN_5V"
 		(at 246.38 124.46 180)
 		(effects
 			(font
@@ -5008,7 +5008,7 @@
 		)
 		(uuid "5236f3fd-6dbe-414b-a3f1-a714d3ae0893")
 	)
-	(label "DEV_GND1"
+	(label "DEVPIN_GND1"
 		(at 180.34 148.59 180)
 		(effects
 			(font
@@ -5048,7 +5048,7 @@
 		)
 		(uuid "5d79fc04-a163-4a96-b065-ceaabc234ae6")
 	)
-	(label "DEV_IO21"
+	(label "DEVPIN_IO21"
 		(at 246.38 154.94 180)
 		(effects
 			(font
@@ -5078,7 +5078,7 @@
 		)
 		(uuid "7a6e4c61-5356-4130-9822-ed0f5e62e457")
 	)
-	(label "DEV_3V3"
+	(label "DEVPIN_3V3"
 		(at 177.8 171.45 90)
 		(effects
 			(font
@@ -5088,7 +5088,7 @@
 		)
 		(uuid "7f6139b9-3778-4da0-a4a1-2663ea87b18e")
 	)
-	(label "DEV_IO22"
+	(label "DEVPIN_IO22"
 		(at 246.38 165.1 180)
 		(effects
 			(font
@@ -5098,7 +5098,7 @@
 		)
 		(uuid "7f95d5ae-e45c-458b-ad0e-b21e2f23e8d4")
 	)
-	(label "DEV_3V3"
+	(label "DEVPIN_3V3"
 		(at 246.38 114.3 180)
 		(effects
 			(font
@@ -5118,7 +5118,7 @@
 		)
 		(uuid "8d2f3077-1393-45d0-b359-f444e920e401")
 	)
-	(label "DEV_GND1"
+	(label "DEVPIN_GND1"
 		(at 246.38 134.62 180)
 		(effects
 			(font
@@ -5158,7 +5158,7 @@
 		)
 		(uuid "9540be9d-7f55-4752-a0b4-1ae7eff28125")
 	)
-	(label "DEV_GND2"
+	(label "DEVPIN_GND2"
 		(at 246.38 144.78 180)
 		(effects
 			(font
@@ -5218,7 +5218,7 @@
 		)
 		(uuid "b1ab0187-4cce-435b-9f2b-336eec54d229")
 	)
-	(label "DEV_3V3"
+	(label "DEVPIN_3V3"
 		(at 180.34 113.03 180)
 		(effects
 			(font
@@ -5268,7 +5268,7 @@
 		)
 		(uuid "bece4e48-bb40-4467-aef6-0dca46e808e1")
 	)
-	(label "DEV_IO21"
+	(label "DEVPIN_IO21"
 		(at 220.98 128.27 0)
 		(effects
 			(font
@@ -5308,7 +5308,7 @@
 		)
 		(uuid "e0735104-b507-4e69-a567-f609be6bbab7")
 	)
-	(label "DEV_GND2"
+	(label "DEVPIN_GND2"
 		(at 220.98 113.03 0)
 		(effects
 			(font
@@ -5318,7 +5318,7 @@
 		)
 		(uuid "e43e1da3-5da3-4a28-97ac-30956b91c59a")
 	)
-	(label "DEV_5V"
+	(label "DEVPIN_5V"
 		(at 180.34 146.05 180)
 		(effects
 			(font
