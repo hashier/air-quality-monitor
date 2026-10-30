@@ -3789,7 +3789,7 @@
 	)
 	(text "Extra pull-ups, not fitted: the SCD40 breakout"
 		(exclude_from_sim no)
-		(at 223.52 195.58 0)
+		(at 223.52 191.77 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3800,7 +3800,7 @@
 	)
 	(text "already pulls SDA/SCL up (7.5k)."
 		(exclude_from_sim no)
-		(at 223.52 199.39 0)
+		(at 223.52 195.58 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3808,6 +3808,17 @@
 			(justify left bottom)
 		)
 		(uuid "b397caa9-cdf0-46ae-9022-0fb731b99215")
+	)
+	(text "R3/R4 are for a breakout without its own."
+		(exclude_from_sim no)
+		(at 223.52 199.39 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d869d2fc-c214-4396-8713-29c9babe004d")
 	)
 	(text "Sensors and display (I2C)"
 		(exclude_from_sim no)
