@@ -3787,9 +3787,9 @@
 		)
 		(uuid "a077d78a-cebf-4927-8466-08d353ffeb05")
 	)
-	(text "Pull-ups: not fitted by default,"
+	(text "Extra pull-ups, not fitted: the SCD40 breakout"
 		(exclude_from_sim no)
-		(at 223.52 200.66 0)
+		(at 223.52 195.58 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3798,9 +3798,9 @@
 		)
 		(uuid "a96dff5e-fb43-4168-b1b7-a8446131111a")
 	)
-	(text "decided by the bus test."
+	(text "already pulls SDA/SCL up (7.5k)."
 		(exclude_from_sim no)
-		(at 223.52 204.47 0)
+		(at 223.52 199.39 0)
 		(effects
 			(font
 				(size 1.27 1.27)
