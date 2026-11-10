@@ -105,5 +105,5 @@ I2C stays on the pins the firmware uses today: SDA GPIO21, SCL GPIO22, at
   C1 to C5 have 4 holes, for leads 2.5 mm or 5 mm apart, until the
   capacitors at hand are measured. C1 (10 µF) has an electrolytic footprint
   with a + mark, which also takes a ceramic one.
-- ESP32-S3 dev board (2 × 22 pins, rows roughly 25.4 mm apart from a photo,
-  not measured) is not supported in v1.
+- ESP32-S3 dev board (2 × 22 pins from a photo, rows 25.4 mm apart: measured
+  about 25 mm with a folding ruler) is not supported in v1.
