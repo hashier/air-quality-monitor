@@ -102,5 +102,7 @@ I2C stays on the pins the firmware uses today: SDA GPIO21, SCL GPIO22, at
   and the SPS30 needs some on the bus. Whether the PCB adds pull-ups is
   decided by the bus test.
 - Exact Schottky diode and capacitor parts, picked with the footprints.
+  C2 to C5 have 4 holes, for leads 2.5 mm or 5 mm apart, until the
+  capacitors at hand are measured.
 - ESP32-S3 dev board (2 × 22 pins, rows roughly 25.4 mm apart from a photo,
   not measured) is not supported in v1.
