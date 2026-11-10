@@ -27,9 +27,10 @@ for a later version.
 
 ### Power
 
-- **Input:** a power-only USB-C socket (6 pins, for example the GCT USB4125
-  footprint in KiCad's `Connector_USB` library), 5V, no USB PD. CC1 and CC2
-  each get their own 5.1 kΩ resistor to GND, so a USB-C charger turns on 5V.
+- **Input:** a USB-C breakout board (AliExpress 1005004848153846, 20.2 x 14 mm)
+  on an 8-pin 2.54 mm header, 5V, no USB PD. Only VBUS and GND are wired. The
+  board has its own 5.1 kΩ resistors on CC1 and CC2, so a USB-C charger turns
+  on 5V. Pin order and screw holes still need checking on the real board.
 - **5V rail** feeds the SPS30 and both 3.3V regulators directly.
 - **Dev board 5V pin** (J1 pin 14) is fed from the 5V rail through a Schottky
   diode, which a jumper cap bypasses by default (see below). With the cap
@@ -99,7 +100,6 @@ I2C stays on the pins the firmware uses today: SDA GPIO21, SCL GPIO22, at
 - Pull-ups: the SCD40 breakout and probably the OLED module bring their own,
   and the SPS30 needs some on the bus. Whether the PCB adds pull-ups is
   decided by the bus test.
-- Exact USB-C socket, Schottky diode and capacitor parts, picked with the
-  footprints.
+- Exact Schottky diode and capacitor parts, picked with the footprints.
 - ESP32-S3 dev board (2 × 22 pins, rows roughly 25.4 mm apart from a photo,
   not measured) is not supported in v1.
