@@ -42,7 +42,7 @@ for a later version.
   1 µF on input and output, instead of the dev board's 3V3, which also feeds the
   WiFi:
   - **3V3_SCD** feeds only the SCD40. Pending the LDO test.
-  - **3V3_AUX** feeds the OLED and the Qwiic sockets.
+  - **3V3_AUX** feeds the OLED and the two JST ZH sensor sockets.
 - **Fallback to the dev board's rails:**
   - each 3.3V rail can be switched to the dev board's 3V3 pin with a 3-pad
     solder jumper (`SolderJumper_3_Bridged12`): a thin trace joins the LDO side
@@ -90,10 +90,11 @@ I2C stays on the pins the firmware uses today: SDA GPIO21, SCL GPIO22, at
   per the SPS30 datasheet v2.0: 1 VDD (5V, 4.5 to 5.5V), 2 SDA, 3 SCL, 4 SEL,
   5 GND. SEL goes to GND to select I2C. Up to 80 mA during fan start. Sensirion
   recommends UART over I2C for cables longer than 20 cm.
-- **Qwiic sockets (1 or 2):** for trying out other I2C sensors (the ENS160 and
-  AHT21 module, for example). JST SH 4-pin, 1 mm pitch (SM04B-SRSS-TB), pin
-  order GND, 3.3V, SDA, SCL per SparkFun. These are small SMD parts and the
-  hardest joints on the board.
+- **Sensor sockets (1 or 2):** for trying out other I2C sensors (the ENS160 and
+  AHT21 module, for example), each soldered to a ZH cable. JST ZH 4-pin,
+  1.5 mm pitch, through-hole (B4B-ZR), pin order GND, 3.3V, SDA, SCL as in
+  SparkFun's Qwiic. Not Qwiic plugs: Qwiic uses the smaller surface-mount
+  JST SH (1 mm pitch), too fine to solder by hand here.
 
 ### Still open
 

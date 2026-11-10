@@ -804,261 +804,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Connector_Generic_MountingPin:Conn_01x04_MountingPin"
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "J"
-				(at 0 5.08 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "Conn_01x04_MountingPin"
-				(at 1.27 -7.62 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Generic connectable mounting pin connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "connector"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "Connector*:*_1x??-1MP*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "Conn_01x04_MountingPin_1_1"
-				(rectangle
-					(start -1.27 3.81)
-					(end 1.27 -6.35)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(rectangle
-					(start -1.27 2.667)
-					(end 0 2.413)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 0.127)
-					(end 0 -0.127)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 -2.413)
-					(end 0 -2.667)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 -4.953)
-					(end 0 -5.207)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.016 -7.112) (xy 1.016 -7.112)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(text "Mounting"
-					(at 0 -6.731 0)
-					(effects
-						(font
-							(size 0.381 0.381)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 2.54 0)
-					(length 3.81)
-					(name "Pin_1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 0 0)
-					(length 3.81)
-					(name "Pin_2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -2.54 0)
-					(length 3.81)
-					(name "Pin_3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -5.08 0)
-					(length 3.81)
-					(name "Pin_4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -10.16 90)
-					(length 3.048)
-					(name "MountPin"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "MP"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Device:C"
 			(pin_numbers
 				(hide yes)
@@ -3530,7 +3275,7 @@
 		)
 		(uuid "09cea943-917f-4bf7-937e-f8f2975c70bf")
 	)
-	(text "3.3V: one AP2112K for the SCD40 alone, one for OLED and Qwiic"
+	(text "3.3V: one AP2112K for the SCD40 alone, one for OLED and J5/J6"
 		(exclude_from_sim no)
 		(at 25.4 93.98 0)
 		(effects
@@ -3609,7 +3354,7 @@
 		)
 		(uuid "869c4a53-a789-48d2-98a0-c1c767b30e60")
 	)
-	(text "Qwiic: GND 3.3V SDA SCL"
+	(text "J5/J6 (JST ZH): GND 3.3V SDA SCL"
 		(exclude_from_sim no)
 		(at 152.4 228.6 0)
 		(effects
@@ -3806,10 +3551,6 @@
 		(uuid "1537fb27-bb8e-47d0-8ee2-1afd7db569bb")
 	)
 	(no_connect
-		(at 160.02 223.52)
-		(uuid "19b22165-3c6e-459e-8f67-85665add0658")
-	)
-	(no_connect
 		(at 182.88 143.51)
 		(uuid "1b7e04d3-5ab8-483b-9717-e65cf5ffe427")
 	)
@@ -3880,10 +3621,6 @@
 	(no_connect
 		(at 182.88 123.19)
 		(uuid "d92fa60f-6627-4190-ab9a-9a09f05805ac")
-	)
-	(no_connect
-		(at 190.5 223.52)
-		(uuid "da0f7050-f3d9-443d-8884-a3e885934827")
 	)
 	(no_connect
 		(at 182.88 115.57)
@@ -6534,7 +6271,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector_Generic_MountingPin:Conn_01x04_MountingPin")
+		(lib_id "Connector_Generic:Conn_01x04")
 		(at 190.5 213.36 0)
 		(unit 1)
 		(body_style 1)
@@ -6556,7 +6293,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Qwiic"
+		(property "Value" "JST ZH 4P"
 			(at 193.04 216.2555 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6567,7 +6304,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_JST:JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal"
+		(property "Footprint" "Connector_JST:JST_ZH_B4B-ZR_1x04_P1.50mm_Vertical"
 			(at 190.5 213.36 0)
 			(hide yes)
 			(show_name no)
@@ -6589,7 +6326,7 @@
 				)
 			)
 		)
-		(property "Description" "Generic connectable mounting pin connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
+		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
 			(at 190.5 213.36 0)
 			(hide yes)
 			(show_name no)
@@ -6611,9 +6348,6 @@
 		)
 		(pin "4"
 			(uuid "643088c2-09ad-416a-91f7-623e0e2e9cbf")
-		)
-		(pin "MP"
-			(uuid "07146fd4-0a6e-49e0-8e76-4cc07196b2d7")
 		)
 		(instances
 			(project "air-quality-monitor"
@@ -9390,7 +9124,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector_Generic_MountingPin:Conn_01x04_MountingPin")
+		(lib_id "Connector_Generic:Conn_01x04")
 		(at 160.02 213.36 0)
 		(unit 1)
 		(body_style 1)
@@ -9412,7 +9146,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Qwiic"
+		(property "Value" "JST ZH 4P"
 			(at 162.56 216.2555 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9423,7 +9157,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_JST:JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal"
+		(property "Footprint" "Connector_JST:JST_ZH_B4B-ZR_1x04_P1.50mm_Vertical"
 			(at 160.02 213.36 0)
 			(hide yes)
 			(show_name no)
@@ -9445,7 +9179,7 @@
 				)
 			)
 		)
-		(property "Description" "Generic connectable mounting pin connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
+		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
 			(at 160.02 213.36 0)
 			(hide yes)
 			(show_name no)
@@ -9467,9 +9201,6 @@
 		)
 		(pin "4"
 			(uuid "7f69f40a-766a-4ed8-ad24-7aded6b1a2e0")
-		)
-		(pin "MP"
-			(uuid "bb33cfe3-44f8-4a38-8056-74081411d552")
 		)
 		(instances
 			(project "air-quality-monitor"
