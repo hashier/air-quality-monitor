@@ -371,7 +371,7 @@ switch:
 
 light:
   - platform: esp32_rmt_led_strip
-    rgb_order: GRB
+    channel_colors: GRB
     chipset: ws2812
     pin: GPIO8
     num_leds: 1
