@@ -9,8 +9,12 @@ DIY air quality monitor on an ESP32-C6, running ESPHome and reporting to Home As
 - **Sensirion SPS30**: particulate matter PM1.0 / 2.5 / 4.0 / 10.0 (I2C `0x69`, 5V)
 - **SSD1306** 128x64 OLED (I2C `0x3C`)
 - **WS2812** RGB LED (GPIO8)
+- **ENS160 + AHT21** combo module: TVOC plus derived eCO2/AQI, AHT21
+  temperature/humidity for compensation (I2C `0x52` / `0x38`). Under
+  evaluation on the breadboard; mainly calculated values instead of measured
+  ones, so it probably won't make the final PCB.
 
-All three sensors share one I2C bus at 100 kHz (the SPS30 datasheet ceiling).
+All devices share one I2C bus at 100 kHz (the SPS30 datasheet ceiling).
 
 ## Repo layout
 
